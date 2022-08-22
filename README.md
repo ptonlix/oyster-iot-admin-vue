@@ -70,6 +70,11 @@ Modern browsers and Internet Explorer 10+.
 | --------- | --------- | --------- | --------- |
 | IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
 
+# Wechat Mini Program
+
+Please contact the administrator through the official wechat account to obtain the experience account
+
+
 ## License
 
 [GPLv3](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
