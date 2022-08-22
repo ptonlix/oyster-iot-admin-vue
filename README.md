@@ -2,10 +2,11 @@
 
 English | [简体中文](./README-zh.md)
 
-> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
+> Oyster Management platform: Currently supports user management, log management, and device management
 
-**Live demo:** http://panjiachen.github.io/vue-admin-template
-
+**Live demo:** https://oyster-iot.cloud/  
+**Wechat public account:** Scan and add, and contact to obtain the experience account
+<img src="https://img.gejiba.com/images/7ba3b6926304f02ca20edb6ef4dec764.jpg" alt="image-20220610100236465" />
 
 **The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
 
@@ -13,8 +14,8 @@ English | [简体中文](./README-zh.md)
   <b>SPONSORED BY</b>
 </p>
 <p align="center">
-   <a href="https://finclip.com?from=vue_element" title="FinClip" target="_blank">
-      <img height="200px" src="https://gitee.com/panjiachen/gitee-cdn/raw/master/vue%E8%B5%9E%E5%8A%A9.png" title="FinClip">
+   <a href="https://www.gogeek.com.cn/" title="gogeek" target="_blank">
+      <img height="200px" src="https://img.gejiba.com/images/96b6d150bd758b13d66aec66cb18044e.jpg" title="gogeek">
    </a>
 </p>
 
@@ -22,10 +23,10 @@ English | [简体中文](./README-zh.md)
 
 ```bash
 # clone the project
-git clone https://github.com/PanJiaChen/vue-admin-template.git
+git clone https://github.com/ptonlix/oyster-iot-admin-vue
 
 # enter the project directory
-cd vue-admin-template
+cd oyster-iot-admin-vue
 
 # install dependency
 npm install
@@ -61,29 +62,6 @@ npm run lint
 # code format check and auto fix
 npm run lint -- --fix
 ```
-
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
-
-## Demo
-
-![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
-
-## Extra
-
-If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
-
-For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-
-## Related Project
-
-- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-
-- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
-
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
-
 ## Browsers support
 
 Modern browsers and Internet Explorer 10+.
@@ -94,6 +72,6 @@ Modern browsers and Internet Explorer 10+.
 
 ## License
 
-[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
+[GPLv3](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
 
-Copyright (c) 2017-present PanJiaChen
+Copyright (c) 2022-present gogeek
