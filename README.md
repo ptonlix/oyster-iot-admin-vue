@@ -1,6 +1,19 @@
-# Oyster-IoT-admin-vue
+# Oyster-IoT-admin
 
 English | [简体中文](./README-zh.md)
+
+<p>
+	<p align="center">
+		<img src="https://img.gejiba.com/images/375278c7eb92bab1d7ba09f27e2fe8b4.png">
+	</p>
+	<p align="center">
+		<font size=6 face="宋体">打造海洋养殖专业物联平台</font>
+	<p>
+</p>
+<p align="center">
+<img alt="Vue" src="https://img.shields.io/badge/Vue-2.0-blue">
+<img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey">
+</p>
 
 > Oyster Management platform: Currently supports user management, log management, and device management
 
@@ -77,6 +90,6 @@ Please contact the administrator through the official wechat account to obtain t
 
 ## License
 
-[GPLv3](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
+[MIT](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
 
 Copyright (c) 2022-present gogeek

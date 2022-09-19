@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <el-button class="addspace" plain size="small" icon="el-icon-plus" type="primary" @click="addVideoSpace">新增空间</el-button>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column type="expand">
         <template slot-scope="props">
@@ -7,48 +8,52 @@
             <el-form-item label="创建日期">
               <span>{{ props.row.created_at }}</span>
             </el-form-item>
-            <el-form-item label="用户名">
+            <el-form-item label="平台">
+              <span>{{ props.row.platform }}</span>
+            </el-form-item>
+            <el-form-item label="空间ID">
+              <span>{{ props.row.space_id }}</span>
+            </el-form-item>
+            <el-form-item label="空间名称">
+              <span>{{ props.row.space_name }}</span>
+            </el-form-item>
+            <el-form-item label="关联用户">
               <span>{{ props.row.username }}</span>
             </el-form-item>
-            <el-form-item label="电话">
-              <span>{{ props.row.mobile }}</span>
+            <el-form-item label="接入类型">
+              <span>{{ props.row.access_type }}</span>
             </el-form-item>
-            <el-form-item label="邮箱">
-              <span>{{ props.row.email }}</span>
+            <el-form-item label="设备数量">
+              <span>{{ props.row.devices_count }}</span>
             </el-form-item>
-            <el-form-item label="姓氏">
-              <span>{{ props.row.first_name }}</span>
+            <el-form-item label="流数量">
+              <span>{{ props.row.stream_count }}</span>
             </el-form-item>
-            <el-form-item label="名字">
-              <span>{{ props.row.last_name }}</span>
+            <el-form-item label="在线流数量">
+              <span>{{ props.row.online_stream_count }}</span>
             </el-form-item>
-            <el-form-item label="账户类型">
-              <span>{{ props.row.usertype }}</span>
+            <el-form-item label="禁用流数量">
+              <span>{{ props.row.disabled_stream_count }}</span>
             </el-form-item>
-            <el-form-item label="是否禁用">
-              <span>{{ props.row.enabledtype }}</span>
+            <el-form-item label="按需拉流">
+              <span>{{ props.row.on_demand_pull ? "开" : "关" }}</span>
             </el-form-item>
           </el-form>
         </template>
       </el-table-column>
-      <el-table-column prop="created_at" label="创建日期" width="200" />
-      <el-table-column prop="username" label="用户名" width="180" />
-      <el-table-column prop="mobile" label="电话" />
-      <el-table-column prop="email" label="邮箱" />
+      <el-table-column prop="space_id" label="空间ID" />
+      <el-table-column prop="space_name" label="空间名称" />
+      <el-table-column prop="platform" label="平台" />
+      <el-table-column prop="username" label="关联用户" />
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button
-            size="mini"
-            type="primary"
-            @click="handleResetPassword(scope.$index, scope.row)"
-          >重置密码</el-button>
           <el-button
             size="mini"
             @click="handleEdit(scope.$index, scope.row)"
           >编辑</el-button>
           <el-popconfirm
             class="deletebutton"
-            title="您确定删除该用户吗？"
+            title="您确定删除该监控视频空间吗？"
             confirm-button-text="好的"
             cancel-button-text="不用了"
             icon="el-icon-info"
@@ -73,73 +78,41 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
-    <userinfo :dialog-visible.sync="userInfoShow" :user-data="userInfo" @reload="reload" />
-    <resetpasswd :dialog-visible.sync="passwdShow" :user-id="nowUserId" />
+    <spaceinfo :dialog-visible.sync="spaceInfoShow" :space-data="spaceInfo" @reload="reload" />
+    <addspace v-if="addSpaceShow" :dialog-visible.sync="addSpaceShow" @reload="reload" />
   </div>
 </template>
+
 <script>
-import Userinfo from './userinfo.vue'
-import Resetpasswd from './resetpasswd.vue'
-import { listUser, deleteUser } from '@/api/user'
+import { listSpace, deleteSpace } from '@/api/oystervideo'
+import Spaceinfo from './spaceinfo.vue'
+import Addspace from './addspace.vue'
 export default {
   components: {
-    Userinfo,
-    Resetpasswd
+    Spaceinfo,
+    Addspace
   },
   data() {
     return {
       tableData: [{
         created_at: '2022-06-05 21:31:06',
         username: '王小虎',
-        mobile: '13510605710',
-        email: '260431910@qq.com',
-        first_name: '陈',
-        last_name: '富东',
-        usertype: '管理员',
-        is_admin: true,
-        enabledtype: '启用',
-        enabled: true
-      }, {
-        created_at: '2022-06-05 21:31:06',
-        username: '王小虎',
-        mobile: '13510605710',
-        email: '260431910@qq.com',
-        first_name: '陈',
-        last_name: '富东',
-        usertype: '管理员',
-        is_admin: true,
-        enabledtype: '启用',
-        enabled: true
-
-      }, {
-        created_at: '2022-06-05 21:31:06',
-        username: '王小虎',
-        mobile: '13510605710',
-        email: '260431910@qq.com',
-        first_name: '陈',
-        last_name: '富东',
-        usertype: '管理员',
-        is_admin: true,
-        enabledtype: '启用',
-        enabled: true
-      }, {
-        created_at: '2022-06-05 21:31:06',
-        username: '王小虎',
-        mobile: '13510605710',
-        email: '260431910@qq.com',
-        first_name: '陈',
-        last_name: '富东',
-        usertype: '管理员',
-        is_admin: true,
-        enabledtype: '启用',
-        enabled: true
+        platform: 'QINIU',
+        space_id: '3nm4x17o751vq',
+        space_name: 'newly_namespace_test001',
+        access_type: 'gb28181',
+        devices_count: 11,
+        stream_count: 11,
+        online_stream_count: 1,
+        disabled_stream_count: 2,
+        on_demand_pull: true
       }],
       // 默认显示第一条
       currentPage: 1,
       // 弹窗
-      userInfoShow: false,
-      userInfo: {},
-      passwdShow: false,
+      spaceInfoShow: false,
+      spaceInfo: {},
+      addSpaceShow: false,
       nowUserId: 0,
       // 分页
       sumUserNum: 0,
@@ -147,11 +120,14 @@ export default {
         pagesize: 10,
         pagenum: 1,
         keyword: ''
-      }
+      },
+      update: true
     }
   },
+  mounted() {
+  },
   created() {
-    this.listUserinfo()
+    this.listSpaceinfo()
   },
   methods: {
     handleSizeChange(val) {
@@ -169,18 +145,20 @@ export default {
     },
     handleEdit(index, row) {
       console.log(index, row)
-      this.userInfoShow = true
-      this.userInfo = row
+      this.spaceInfoShow = true
+      this.spaceInfo.id = row.id
+      this.spaceInfo.userid = row.user_id
+      this.spaceInfo.username = row.username
     },
     handleDelete(index, row) {
       console.log(index, row)
       this.deleteUserInfo(row)
     },
-    async listUserinfo() {
-      const res = await listUser(this.pageFrom)
+    async listSpaceinfo() {
+      const res = await listSpace(this.pageFrom)
       if (res.code !== 200) {
         // 获取用户列表
-        return this.$message('获取用户列表失败')
+        return this.$message('获取监控视频空间列表失败')
       }
       this.tableData = []
       this.sumUserNum = res.data.totalnum
@@ -188,21 +166,19 @@ export default {
         const time = new Date(item.created_at)
         item.created_at = this.formatDateTime(time)
         return {
-          ...item,
-          usertype: item.is_admin ? '管理员' : '普通用户',
-          enabledtype: item.enabled ? '启用' : '禁用'
+          ...item
         }
       }))
-      this.$message.success('获取用户列表成功')
+      this.$message.success('获取监控视频空间列表成功')
     },
-    async deleteUserInfo(userinfo) {
-      const res = await deleteUser({ id: userinfo.id })
+    async deleteUserInfo(spaceinfo) {
+      const res = await deleteSpace({ id: spaceinfo.id })
       if (res.code !== 200) {
         // 获取用户列表
-        return this.$message('删除用户失败')
+        return this.$message('删除监控视频空间失败')
       }
-      this.$message.success('删除用户成功')
-      this.listUserinfo()
+      this.$message.success('删除监控视频空间成功')
+      this.listSpaceinfo()
     },
     // 5.日期对象转时间字符串：2020-03-01 00:00:00
     formatDateTime(date) {
@@ -220,7 +196,10 @@ export default {
       return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second
     },
     reload() {
-      this.listUserinfo()
+      this.listSpaceinfo()
+    },
+    addVideoSpace() {
+      this.addSpaceShow = true
     }
   }
 
@@ -228,6 +207,9 @@ export default {
 </script>
 
 <style>
+  .addspace {
+    margin-left: 20px;
+  }
   .demo-table-expand {
     font-size: 0;
   }

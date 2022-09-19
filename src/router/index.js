@@ -56,6 +56,31 @@ export const constantRoutes = [
     }]
   },
   {
+    path: '/video',
+    component: Layout,
+    redirect: '/video/videomonitor',
+    name: 'Video',
+    meta: { title: '视频中心', icon: 'el-icon-video-camera' },
+    children: [{
+      path: 'videomonitor',
+      name: 'Videomonitor',
+      component: () => import('@/views/video/videomonitor'),
+      meta: { title: '视频监控', icon: 'table' }
+    },
+    {
+      path: 'spacemanger',
+      name: 'Spacemanger',
+      component: () => import('@/views/video/spacemanger'),
+      meta: { title: '空间管理', icon: 'el-icon-s-cooperation' }
+    },
+    {
+      path: 'videoplayback',
+      name: 'Videoplayback',
+      component: () => import('@/views/video/videoplayback'),
+      meta: { title: '视频回放', icon: 'el-icon-video-play' }
+    }]
+  },
+  {
     path: '/usermanage',
     component: Layout,
     redirect: '/usermanage/userlist',
@@ -98,7 +123,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://gitee.com/ptonlix/oyster-iot',
+        path: 'https://github.com/ptonlix/oyster-iot',
         meta: { title: '公司官网', icon: 'link' }
       }
     ]

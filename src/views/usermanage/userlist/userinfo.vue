@@ -227,8 +227,8 @@ export default {
         this.editUserInfo()
         setTimeout(() => {
           this.close()
-        }, 1000)
-        setTimeout(window.location.reload(), 1000)
+          this.$emit('reload')
+        }, 300)
       })
     },
     async editUserInfo() {

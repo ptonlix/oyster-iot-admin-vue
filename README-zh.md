@@ -1,11 +1,25 @@
-# Oyster-IoT-admin-vue
+# Oyster-IoT-admin
 
-English | [简体中文](./README-zh.md)
+[English](./README.md) | 简体中文
+
+<p>
+	<p align="center">
+		<img src="https://img.gejiba.com/images/375278c7eb92bab1d7ba09f27e2fe8b4.png">
+	</p>
+	<p align="center">
+		<font size=6 face="宋体">打造海洋养殖专业物联平台</font>
+	<p>
+</p>
+<p align="center">
+<img alt="Vue" src="https://img.shields.io/badge/Vue-2.0-blue">
+<img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey">
+</p>
 
 > Oyster管理平台: 目前支持 用户管理、日志管理、设备管理
 
 **演示平台:** https://oyster-iot.cloud/  
 **微信公众号:** 扫描添加，联系获取体验账号
+
 <img src="https://img.gejiba.com/images/7ba3b6926304f02ca20edb6ef4dec764.jpg" alt="image-20220610100236465" />
 
 **The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
@@ -76,6 +90,6 @@ Modern browsers and Internet Explorer 10+.
 
 ## License
 
-[GPLv3](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
+[MIT](https://github.com/ptonlix/oyster-iot-admin-vue/blob/main/LICENSE) license.
 
 Copyright (c) 2022-present gogeek

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-1174.000000, -409.000000)">
+            <g id="编组" transform="translate(1160.000000, 320.000000)" filter="url(#filter-1)">
+                <g transform="translate(14.000000, 89.000000)">
+                    <rect id="矩形" x="0" y="0" width="20" height="20"></rect>
+                    <path d="M9.6868476,0.00856324568 C7.20250522,0.154638462 5.1565762,2.1788236 4.98956159,4.66210228 C4.80167015,7.58360661 7.09812109,10.0251495 9.97912317,10.0251495 C12.7557411,10.0251495 14.9895616,7.7714176 14.9895616,5.01685638 C15.0104384,2.13708783 12.5887265,-0.158379859 9.6868476,0.00856324568 Z M10,11.6528448 C6.65970772,11.6528448 0,13.3222758 0,16.6611379 L0,19.1652845 C0,19.624378 0.375782881,20 0.835073069,20 L19.1649269,20 C19.6242171,20 20,19.624378 20,19.1652845 L20,16.64027 C20,13.3222758 13.3402923,11.6528448 10,11.6528448 Z" id="形状" fill="#000000" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
