@@ -47,12 +47,19 @@
     </el-form>
     <!-- 底部 -->
     <footer class="footer">
-      <span>北海凌逸极客科技有限公司 </span>
+      <span>Copyright @ 2022-2023 凌逸极客 All rights reserved.</span>
       <a
+        class="atext"
         href="https://beian.miit.gov.cn/#/Integrated/index"
         target="_blank"
       >桂ICP备2022004780号-1</a>
-      <i />
+      <div class="atext">
+        <img src="../../assets/gab.png">
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=45050202000599"
+          target="_blank"
+        >桂公网安备 45050202000599号</a>
+      </div>
     </footer>
   </div>
 </template>
@@ -256,6 +263,11 @@ $light_gray:#eee;
     width:100%;
     height:60px;
     text-align: center;
-    color:#fff}
+    color:#fff;
+    .atext{
+      display:inline;
+      margin-left: 20px;
+    }
+  }
 }
 </style>
